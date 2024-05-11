@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ddd;
+      }
+      .calc-box {
+        width: fit-content;
+        height: fit-content;
+        border-radius: 10px;
+        background-color: #bbb;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        padding: 20px;
+      }
+      .displayBox {
+        width: 230px;
+        height: 80px;
+        text-align: end;
+        font-size: 30px;
+        padding: 5px;
+        overflow-x: auto;
+        background-color: rgba(221, 221, 221, 0.7);
+        border-radius: 8px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        color: #000000aa;
+        border: none;
+        outline: none;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .row input {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(221, 221, 221, 0.7);
+        border: none;
+        cursor: pointer;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 8px;
+        font-weight: 600;
+        color: #000000aa;
+      }
+      .equal {
+        display: flex;
+        flex: 1;
+      }
+      .row input:active {
+        box-shadow: rgba(247, 247, 247, 0.2) 0px 7px 29px 0px;
+      }
+    </style>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="calc-box">
+        <input type="text" class="displayBox" />
+        <div class="row">
+          <input
+            type="button"
+            value="AC"
+            onclick="document.querySelector('.displayBox').value = ''"
+          />
+          <input
+            type="button"
+            value="Dlt"
+            onclick="document.querySelector('.displayBox').value = document.querySelector('.displayBox').value.slice(0, -1)"
+          />
+          <input
+            type="button"
+            value="."
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="/"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+        </div>
+        <div class="row">
+          <input
+            type="button"
+            value="7"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="8"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="9"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="*"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+        </div>
+        <div class="row">
+          <input
+            type="button"
+            value="4"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="5"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="6"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="-"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+        </div>
+        <div class="row">
+          <input
+            type="button"
+            value="1"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="2"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="3"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="+"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+        </div>
+        <div class="row">
+          <input
+            type="button"
+            value="00"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="0"
+            onclick="document.querySelector('.displayBox').value += value"
+          />
+          <input
+            type="button"
+            value="="
+            class="equal"
+            onclick="document.querySelector('.displayBox').value = eval(document.querySelector('.displayBox').value)"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
